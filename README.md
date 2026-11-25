@@ -1,6 +1,6 @@
 # Alternative à WDS : Clonezilla Server Edition (DRBL) sur Proxmox
 
-TP3 – Déploiement des environnements de travail. Capture et déploiement d'une image Windows avec Clonezilla SE.
+Déploiement des environnements de travail. Capture et déploiement d'une image Windows avec Clonezilla SE.
 
 ## Topologie du labo
 
@@ -132,8 +132,6 @@ Mode de transfert : **unicast** (un seul client à restaurer).
 |---|---|---|
 | Nom de l'ordinateur | Le clone porte le même nom que le modèle. Deux clones sur le même réseau entrent en conflit. | Renommer après le déploiement : `Rename-Computer -NewName WIN-TEST -Restart` |
 | SID | Les clones partagent le même identifiant de sécurité. Sans conséquence en groupe de travail, problématique pour un domaine ou WSUS. | Ne pas joindre ces postes au domaine, ou faire un sysprep. |
-| Adresse MAC | Pas de conflit : la MAC appartient à la carte réseau et n'est pas copiée avec le disque. Proxmox en génère une par VM. | Rien à faire. |
-| Adresse IP | Une IP fixe sur le modèle serait héritée par tous les clones. | Laisser le modèle en DHCP, le serveur donne une IP différente à chaque poste. |
 | Activation / licence | Le clone garde l'état d'activation du modèle. | Sans importance en labo. |
 
 ### Sysprep (non fait dans ce TP)
@@ -143,4 +141,4 @@ En production, on prépare le modèle avant la capture, sur win-modele :
 C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown
 ```
 
-Cette commande réinitialise le SID et le nom de l'ordinateur et relance la configuration initiale de Windows au premier démarrage. Elle permet aussi de déployer sur du matériel différent. Sur un Windows allégé (Tiny10), elle peut échouer parce que certains composants sont retirés. Dans ce TP, on l'a sauté et on renomme le poste après le déploiement.
+Cette commande réinitialise le SID et le nom de l'ordinateur et relance la configuration initiale de Windows au premier démarrage. Elle permet aussi de déployer sur du matériel différent. Sur un Windows allégé (Tiny10), elle peut échouer parce que certains composants sont retirés. Dans ce lab, on l'a sauté et on renomme le poste après le déploiement.
