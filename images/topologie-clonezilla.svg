@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="DejaVu Sans, Arial, sans-serif">
+  <defs>
+    <marker id="arrOrange" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto"><path d="M0,0 L22,11 L0,22 z" fill="#D97706"/></marker>
+    <marker id="arrPurple" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto"><path d="M0,0 L22,11 L0,22 z" fill="#7C3AED"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#F7F8FA"/>
+  <text x="960" y="62" text-anchor="middle" font-size="42" font-weight="bold" fill="#111827">Topologie du labo : Clonezilla Server Edition (DRBL)</text>
+  <text x="960" y="98" text-anchor="middle" font-size="22" fill="#6B7280">Alternative à WDS · 3 machines virtuelles sur Proxmox</text>
+  <rect x="740" y="130" width="440" height="80" rx="40" fill="#E6F0FF" stroke="#2F6FDE" stroke-width="3"/>
+  <text x="960" y="166" text-anchor="middle" font-size="26" font-weight="bold" fill="#1E40AF">Internet / réseau local</text>
+  <text x="960" y="194" text-anchor="middle" font-size="20" fill="#1E40AF">192.168.1.0/24</text>
+  <line x1="960" y1="210" x2="960" y2="330" stroke="#2F6FDE" stroke-width="5"/>
+  <text x="985" y="278" font-size="20" fill="#1E40AF">vmbr0 (WAN)</text>
+  <rect x="150" y="240" width="440" height="270" rx="16" fill="white" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="175" y="282" font-size="24" font-weight="bold" fill="#111827">Ce que fait le serveur</text>
+  <text x="175" y="326" font-size="21" fill="#374151"><tspan font-weight="bold">DHCP</tspan> : donne une IP aux clients</text>
+  <text x="175" y="370" font-size="20" fill="#374151"><tspan font-weight="bold">TFTP / PXE</tspan> : démarrage réseau</text>
+  <text x="175" y="414" font-size="21" fill="#374151"><tspan font-weight="bold">NFS</tspan> : partage de fichiers</text>
+  <text x="175" y="458" font-size="21" fill="#374151"><tspan font-weight="bold">Clonezilla</tspan> : capture et déploiement</text>
+  <text x="175" y="494" font-size="21" fill="#374151">des images de disque</text>
+  <rect x="1330" y="240" width="440" height="285" rx="16" fill="white" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="1355" y="282" font-size="24" font-weight="bold" fill="#111827">Deux cartes réseau</text>
+  <text x="1355" y="326" font-size="21" fill="#1E40AF"><tspan font-weight="bold">ens18 (WAN)</tspan> : accès Internet</text>
+  <text x="1355" y="352" font-size="19" fill="#374151">pour installer les paquets</text>
+  <text x="1355" y="402" font-size="21" fill="#047857"><tspan font-weight="bold">ens19 (LAN)</tspan> : réseau isolé</text>
+  <text x="1355" y="428" font-size="19" fill="#374151">dédié aux clients Windows</text>
+  <text x="1355" y="478" font-size="19" fill="#374151">Un seul DHCP sur le LAN :</text>
+  <text x="1355" y="502" font-size="19" fill="#374151">celui du serveur</text>
+  <rect x="620" y="330" width="680" height="330" rx="20" fill="white" stroke="#1F2937" stroke-width="3"/>
+  <text x="960" y="402" text-anchor="middle" font-size="32" font-weight="bold" fill="#111827">Serveur Clonezilla SE</text>
+  <text x="960" y="436" text-anchor="middle" font-size="21" fill="#6B7280">VM Ubuntu 24.04 · DRBL + Clonezilla live</text>
+  <g font-size="21" font-weight="bold" text-anchor="middle">
+    <rect x="650" y="462" width="140" height="50" rx="25" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2"/><text x="720" y="494" fill="#3730A3">DHCP</text>
+    <rect x="800" y="462" width="160" height="50" rx="25" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2"/><text x="880" y="494" fill="#3730A3">TFTP / PXE</text>
+    <rect x="970" y="462" width="110" height="50" rx="25" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2"/><text x="1025" y="494" fill="#3730A3">NFS</text>
+    <rect x="1090" y="462" width="190" height="50" rx="25" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2"/><text x="1185" y="494" fill="#3730A3">Clonezilla live</text>
+  </g>
+  <rect x="650" y="540" width="620" height="70" rx="12" fill="#FFF7E0" stroke="#D69E2E" stroke-width="2"/>
+  <text x="960" y="570" text-anchor="middle" font-size="21" font-weight="bold" fill="#92400E">Dépôt d'images : /home/partimag</text>
+  <text x="960" y="597" text-anchor="middle" font-size="19" fill="#92400E">winserver-modele (≈ 5,4 Go)</text>
+  <rect x="790" y="310" width="340" height="42" rx="21" fill="#2F6FDE"/>
+  <text x="960" y="338" text-anchor="middle" font-size="20" font-weight="bold" fill="white">ens18 · WAN · 192.168.1.213</text>
+  <rect x="740" y="639" width="440" height="42" rx="21" fill="#0F9D58"/>
+  <text x="960" y="667" text-anchor="middle" font-size="20" font-weight="bold" fill="white">ens19 · LAN isolé · 192.168.100.1</text>
+  <line x1="960" y1="681" x2="960" y2="780" stroke="#0F9D58" stroke-width="5"/>
+  <circle cx="1000" cy="722" r="17" fill="#0F9D58"/>
+  <text x="1000" y="729" text-anchor="middle" font-size="20" font-weight="bold" fill="white">1</text>
+  <text x="1028" y="720" font-size="21" font-weight="bold" fill="#047857">DHCP + démarrage PXE</text>
+  <text x="1028" y="746" font-size="19" fill="#374151">vmbr1 (réseau isolé)</text>
+  <rect x="240" y="780" width="1440" height="56" rx="28" fill="#E8F5EE" stroke="#0F9D58" stroke-width="3"/>
+  <text x="960" y="815" text-anchor="middle" font-size="22" font-weight="bold" fill="#065F46">vmbr1 · 192.168.100.0/24 · plage DHCP 192.168.100.10 – .14</text>
+  <line x1="500" y1="836" x2="500" y2="900" stroke="#0F9D58" stroke-width="5"/>
+  <line x1="1420" y1="836" x2="1420" y2="900" stroke="#0F9D58" stroke-width="5"/>
+  <rect x="240" y="900" width="520" height="140" rx="16" fill="white" stroke="#1F2937" stroke-width="3"/>
+  <text x="500" y="946" text-anchor="middle" font-size="30" font-weight="bold" fill="#111827">win-modele</text>
+  <text x="500" y="980" text-anchor="middle" font-size="21" fill="#374151">Windows · poste modèle</text>
+  <text x="500" y="1010" text-anchor="middle" font-size="20" fill="#6B7280">Son disque devient l'image</text>
+  <rect x="1160" y="900" width="520" height="140" rx="16" fill="white" stroke="#1F2937" stroke-width="3"/>
+  <text x="1420" y="946" text-anchor="middle" font-size="30" font-weight="bold" fill="#111827">win-test</text>
+  <text x="1420" y="980" text-anchor="middle" font-size="21" fill="#374151">Windows · poste de test</text>
+  <text x="1420" y="1010" text-anchor="middle" font-size="20" fill="#6B7280">Disque vide : reçoit l'image</text>
+  <path d="M240,970 L90,970 L90,575 L618,575" fill="none" stroke="#D97706" stroke-width="6" stroke-dasharray="14 8" marker-end="url(#arrOrange)"/>
+  <circle cx="142" cy="620" r="17" fill="#D97706"/>
+  <text x="142" y="627" text-anchor="middle" font-size="20" font-weight="bold" fill="white">2</text>
+  <text x="170" y="618" font-size="22" font-weight="bold" fill="#B45309">Capture</text>
+  <text x="170" y="644" font-size="19" fill="#374151">disque → image</text>
+  <path d="M1302,575 L1830,575 L1830,970 L1682,970" fill="none" stroke="#7C3AED" stroke-width="6" stroke-dasharray="14 8" marker-end="url(#arrPurple)"/>
+  <circle cx="1352" cy="620" r="17" fill="#7C3AED"/>
+  <text x="1352" y="627" text-anchor="middle" font-size="20" font-weight="bold" fill="white">3</text>
+  <text x="1380" y="618" font-size="22" font-weight="bold" fill="#6D28D9">Déploiement</text>
+  <text x="1380" y="644" font-size="19" fill="#374151">image → disque</text>
+</svg>
